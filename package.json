@@ -1,7 +1,8 @@
 {
-  "name": "portfolio",
+  "name": "sharanu_portfolio",
   "private": true,
-  "version": "0.0.0",
+  "homepage": "https://sharanumesta.github.io/my-portfolio",
+
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,8 +11,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "bootstrap": "^5.3.3",
+    "framer-motion": "^11.11.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-headroom": "^3.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

@@ -1,35 +1,88 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useRef, useEffect, useState } from 'react';
+import './App.css';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { motion } from 'framer-motion';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import Skills from './components/Skills';
+import AboutMe from './components/AboutMe';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [scrollY, setScrollY] = useState(0);
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeInOut' } }
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar />
+
+      <section id="#home">
+        <Home />
+      </section>
+
+      <motion.div
+        initial="hidden"
+        animate={scrollY > 300 ? 'visible' : 'hidden'}  
+        variants={fadeIn}
+      >
+      <section  id="skills">
+        <Skills
+        />
+        
+      </section>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={scrollY > 800 ? 'visible' : 'hidden'} 
+        variants={fadeIn}
+      >
+        <section id="about">
+          <AboutMe />
+        </section>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={scrollY > 1300 ? 'visible' : 'hidden'}
+        variants={fadeIn}
+      >
+        <section id='projects'>
+        <Projects/>
+      </section>
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        animate={scrollY > 1800 ? 'visible' : 'hidden'} 
+        variants={fadeIn}
+      >
+      <section id='contact'>
+        <Contact/>
+      </section>
+      </motion.div>
+
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

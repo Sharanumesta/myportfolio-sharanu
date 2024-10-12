@@ -1,0 +1,31 @@
+.about-me {
+    padding : 100px 20px;
+    background-color: #f8f9fa; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-text h2 {
+    color: #343a40; 
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #134877;
+    line-height: 2.5; 
+    font-size: 20px;
+    text-align: justify;
+}
+
+.about-image img {
+    width: 100%; 
+    height: auto;
+    max-width: 400px; 
+    border: 2px solid #343a40;
+    transition: transform 0.3s; 
+}
+
+.about-image img:hover {
+    transform: scale(1.05); 
+}

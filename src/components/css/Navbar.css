@@ -1,0 +1,40 @@
+.containers {
+    height: 80px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.842);
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 18px;
+    color: var(--bg-helper); 
+}
+
+.navitems {
+    list-style: none;
+    display: flex;
+}
+
+ul li {
+    padding: 0 20px;
+}
+
+.navitems a {
+    text-decoration: none;
+    color: var(--btn-color); 
+    font-weight: 600;
+    transition: color 0.3s ease; 
+}
+
+.navitems a:hover {
+    color: #FFD700; 
+    text-decoration: underline;
+}
+
+.logo-brand {
+    font-size: x-large;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #FFD700; 
+}
